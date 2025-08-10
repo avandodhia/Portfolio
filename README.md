@@ -182,7 +182,6 @@
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="font-crimson font-bold text-2xl text-gold-accent">
-                    <img src="Avan.png>
                     Avan Dodhia
                 </div>
                 <div class="hidden md:flex space-x-8">
