@@ -1,107 +1,42 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avan Dodhia - Investment Banking Professional</title>
+    <title>Avan Dodhia - Audit Associate & ACCA Candidate</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Crimson+Text:wght@400;600;700&family=Source+Serif+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'dark-primary': '#0a0f1c',
-                        'dark-secondary': '#1a2332',
-                        'dark-accent': '#2a3441',
-                        'gold-accent': '#d4af37',
-                        'blue-accent': '#4a90e2',
-                        'text-primary': '#e8eaed',
-                        'text-secondary': '#9aa0a6',
-                        'text-muted': '#5f6368'
-                    },
-                    fontFamily: {
-                        'inter': ['Inter', 'sans-serif'],
-                        'crimson': ['Crimson Text', 'serif'],
-                        'source': ['Source Serif Pro', 'serif']
-                    }
-                }
-            }
-        }
-    </script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: #e8eaed;
-            background: #0a0f1c;
-            overflow-x: hidden;
         }
         
-        .hero-gradient {
-            background: linear-gradient(135deg, #0a0f1c 0%, #1a2332 50%, #2a3441 100%);
+        .finance-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1f2937 50%, #b59f3b 100%);
         }
         
-        .section-gradient {
-            background: linear-gradient(180deg, #1a2332 0%, #0a0f1c 100%);
+        .gold-accent {
+            background: linear-gradient(135deg, #d4af37 0%, #ffd700 100%);
         }
         
-        .card-shadow {
-            background: rgba(42, 52, 65, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            transition: all 0.4s ease;
+        .card-hover {
+            transition: all 0.3s ease;
         }
         
-        .card-shadow:hover {
-            background: rgba(42, 52, 65, 0.8);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+        .card-hover:hover {
             transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
-        .text-gradient {
-            background: linear-gradient(135deg, #d4af37, #4a90e2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #d4af37, #b8941f);
-            color: #0a0f1c;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #b8941f, #d4af37);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.4);
-        }
-        
-        .btn-outline {
-            border: 2px solid #d4af37;
-            color: #d4af37;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline:hover {
-            background: #d4af37;
-            color: #0a0f1c;
-            transform: translateY(-3px);
+        .skill-bar {
+            transition: width 2s ease-in-out;
         }
         
         .fade-in {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s ease;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
         }
         
         .fade-in.visible {
@@ -109,89 +44,83 @@
             transform: translateY(0);
         }
         
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-60px);
-            transition: all 1s ease;
+        .typing-animation {
+            border-right: 2px solid #d4af37;
+            animation: blink 1s infinite;
         }
         
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
+        @keyframes blink {
+            0%, 50% { border-color: #d4af37; }
+            51%, 100% { border-color: transparent; }
         }
         
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(60px);
-            transition: all 1s ease;
+        .floating {
+            animation: float 3s ease-in-out infinite;
         }
         
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
         
-        .progress-bar {
-            width: 0%;
-            transition: width 2.5s ease-in-out;
-            background: linear-gradient(90deg, #d4af37, #4a90e2);
+        .progress-circle {
+            transform: rotate(-90deg);
         }
         
-        .nav-blur {
-            backdrop-filter: blur(15px);
-            background: rgba(10, 15, 28, 0.9);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        .progress-circle circle {
+            transition: stroke-dashoffset 2s ease-in-out;
         }
         
-        .section-divider {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+        .experience-timeline {
+            position: relative;
         }
         
-        .premium-text {
-            font-family: 'Crimson Text', serif;
-            font-weight: 600;
-            letter-spacing: 0.5px;
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, #d4af37, #1e3a8a);
         }
         
-        .body-text {
-            font-family: 'Source Serif Pro', serif;
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #9aa0a6;
+        .timeline-item {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 40px;
         }
         
-        .accent-glow {
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-        }
-        
-        @media (max-width: 768px) {
-            .hero-text {
-                font-size: 2.5rem;
-            }
-            .body-text {
-                font-size: 1rem;
-                line-height: 1.7;
-            }
+        .timeline-dot {
+            position: absolute;
+            left: 11px;
+            top: 8px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #d4af37;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #d4af37;
         }
     </style>
 </head>
-<body class="bg-dark-primary">
+<body class="bg-gray-50">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 nav-blur">
-        <div class="max-w-7xl mx-auto px-6 py-4">
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 shadow-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
-                <div class="font-crimson font-bold text-2xl text-gold-accent">
-                    Avan Dodhia
+                <div class="text-2xl font-bold text-gray-800">
+                    <span class="text-blue-900">Avan</span> <span class="gold-accent bg-clip-text text-transparent">Dodhia</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#about" class="text-text-secondary hover:text-gold-accent transition-colors font-medium">About</a>
-                    <a href="#experience" class="text-text-secondary hover:text-gold-accent transition-colors font-medium">Experience</a>
-                    <a href="#certifications" class="text-text-secondary hover:text-gold-accent transition-colors font-medium">Certifications</a>
-                    <a href="#expertise" class="text-text-secondary hover:text-gold-accent transition-colors font-medium">Expertise</a>
-                    <a href="#contact" class="text-text-secondary hover:text-gold-accent transition-colors font-medium">Contact</a>
+                    <a href="#home" class="text-gray-700 hover:text-blue-900 transition-colors font-medium">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-blue-900 transition-colors font-medium">About</a>
+                    <a href="#experience" class="text-gray-700 hover:text-blue-900 transition-colors font-medium">Experience</a>
+                    <a href="#skills" class="text-gray-700 hover:text-blue-900 transition-colors font-medium">Skills</a>
+                    <a href="#education" class="text-gray-700 hover:text-blue-900 transition-colors font-medium">Education</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-900 transition-colors font-medium">Contact</a>
                 </div>
-                <button id="mobile-menu" class="md:hidden text-gold-accent">
+                <button id="mobile-menu" class="md:hidden">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -201,85 +130,71 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center hero-gradient pt-20">
-        <div class="max-w-6xl mx-auto px-6 text-center">
-            <div class="fade-in">
-                <h1 class="font-crimson font-bold text-6xl md:text-8xl mb-6 text-gradient hero-text">
-                    Avan Dodhia
-                </h1>
-                <div class="text-2xl md:text-3xl text-gold-accent mb-8 font-medium premium-text">
-                    Investment Banking Fellow • ACCA Professional
+    <section id="home" class="min-h-screen finance-gradient flex items-center justify-center text-white">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <div class="floating mb-8">
+                <div class="w-40 h-40 mx-auto rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-7xl border-4 border-white/20">
+                    📊
                 </div>
-                <p class="body-text mb-12 max-w-4xl mx-auto">
-                    Currently advancing through the prestigious Marquee Fellowship Program while leveraging comprehensive 
-                    audit expertise with NIFTY 50 companies. Specialized in M&A advisory, financial modeling, and capital 
-                    markets with proven track record in ₹24,000+ crore revenue corporations and Goldman Sachs risk simulation certification.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="#experience" class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg">
-                        View Experience
-                    </a>
-                    <a href="#contact" class="btn-outline px-8 py-4 rounded-lg font-semibold text-lg">
-                        Connect With Me
-                    </a>
-                </div>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-in">
+                <span class="typing-animation">Avan Dodhia</span>
+            </h1>
+            <p class="text-2xl md:text-3xl mb-4 fade-in font-light">
+                Audit Associate | ACCA Candidate
+            </p>
+            <p class="text-xl mb-8 fade-in opacity-90 font-light">
+                Aspiring Investment Banking Analyst
+            </p>
+            <p class="text-lg mb-12 fade-in opacity-80 max-w-3xl mx-auto leading-relaxed">
+                Experienced in financial auditing with expertise in IFRS, cost analysis, and stakeholder management. 
+                Currently pursuing ACCA Professional Level with a passion for investment banking and financial markets.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <a href="#experience" class="bg-white text-blue-900 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+                    View Experience
+                </a>
+                <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-900 transition-colors">
+                    Get In Touch
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 section-gradient">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-crimson font-bold text-5xl mb-4 text-text-primary fade-in">
-                    Professional Profile
-                </h2>
-                <div class="section-divider w-24 mx-auto mb-8"></div>
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">About Me</h2>
+                <div class="w-20 h-1 gold-accent mx-auto rounded"></div>
             </div>
-            
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="slide-in-left">
-                    <h3 class="font-crimson font-semibold text-3xl mb-6 text-gold-accent">
-                        Investment Banking Excellence
-                    </h3>
-                    <div class="space-y-6 body-text">
-                        <p>
-                            Currently advancing through the prestigious <strong class="text-gold-accent">Marquee Fellowship Program</strong> 
-                            while leveraging comprehensive audit experience with NIFTY 50 companies and ₹24,000+ crore revenue corporations. 
-                            Deep expertise in financial analysis, due diligence, and valuation methodologies.
-                        </p>
-                        <p>
-                            Proven track record in statutory audits, financial modeling, and regulatory compliance across 
-                            pharmaceuticals and manufacturing sectors. <strong class="text-gold-accent">ACCA qualification (11/13 papers)</strong> 
-                            combined with <strong class="text-gold-accent">Goldman Sachs Risk Simulation certification</strong> provides 
-                            robust foundation in corporate finance and strategic analysis.
-                        </p>
-                        <p>
-                            Specialized in M&A advisory, capital structure optimization, and financial risk assessment with 
-                            hands-on experience in IPO preparation and due diligence processes. Active contributor to college 
-                            cultural activities and beatboxing competitions, demonstrating well-rounded leadership capabilities.
-                        </p>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="w-80 h-80 mx-auto rounded-2xl finance-gradient flex items-center justify-center text-8xl text-white shadow-2xl">
+                        💼
                     </div>
                 </div>
-                
-                <div class="slide-in-right">
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="card-shadow p-8 rounded-xl text-center accent-glow">
-                            <div class="text-4xl font-bold text-gold-accent mb-2">₹24,500+</div>
-                            <div class="text-text-secondary font-medium">Crores Audited</div>
-                        </div>
-                        <div class="card-shadow p-8 rounded-xl text-center">
-                            <div class="text-4xl font-bold text-blue-accent mb-2">11/13</div>
-                            <div class="text-text-secondary font-medium">ACCA Papers</div>
-                        </div>
-                        <div class="card-shadow p-8 rounded-xl text-center">
-                            <div class="text-4xl font-bold text-gold-accent mb-2">35%</div>
-                            <div class="text-text-secondary font-medium">Error Reduction</div>
-                        </div>
-                        <div class="card-shadow p-8 rounded-xl text-center">
-                            <div class="text-4xl font-bold text-blue-accent mb-2">100%</div>
-                            <div class="text-text-secondary font-medium">QA Compliance</div>
-                        </div>
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Finance Professional & Analytical Thinker</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        As an Audit Associate at Grant Thornton Bharat LLP, I've had the privilege of working with 
+                        large-scale clients including Cipla (₹24,000+ Cr revenue) and IPO-preparing firms. My experience 
+                        spans financial auditing, cost variance analysis, and stakeholder management.
+                    </p>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Currently pursuing ACCA Professional Level (11/13 papers cleared), I'm passionate about 
+                        transitioning into investment banking where I can leverage my analytical skills and 
+                        financial expertise to drive strategic decision-making.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Beyond finance, I enjoy reading business literature, playing football, and beatboxing - 
+                        activities that keep me balanced and creative.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">Financial Analysis</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-medium">ACCA Candidate</span>
+                        <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">Audit Expert</span>
+                        <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">IB Aspirant</span>
                     </div>
                 </div>
             </div>
@@ -287,249 +202,343 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20 bg-dark-primary">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-crimson font-bold text-5xl mb-4 text-text-primary fade-in">
-                    Professional Experience
-                </h2>
-                <div class="section-divider w-24 mx-auto mb-8"></div>
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Professional Experience</h2>
+                <div class="w-20 h-1 gold-accent mx-auto rounded"></div>
             </div>
             
-            <div class="space-y-12">
-                <div class="card-shadow p-8 rounded-xl fade-in">
-                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
-                        <div>
-                            <h3 class="font-crimson font-semibold text-2xl mb-2 text-gold-accent">
-                                Investment Banking Fellow
-                            </h3>
-                            <div class="text-xl text-blue-accent mb-2 premium-text">Marquee Fellowship Program</div>
+            <div class="experience-timeline fade-in">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <h3 class="text-2xl font-bold text-gray-800">Audit Associate</h3>
+                            <span class="text-blue-600 font-semibold bg-blue-50 px-4 py-2 rounded-full">July 2024 – Feb 2025</span>
                         </div>
-                        <div class="text-text-secondary font-medium">July 2025 - Present</div>
-                    </div>
-                    <p class="body-text mb-6">
-                        Currently advancing through prestigious investment banking fellowship program, developing expertise in 
-                        M&A advisory, capital markets, and financial modeling. Gaining hands-on experience in deal structuring, 
-                        valuation methodologies, and client relationship management within investment banking environment.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gold-accent bg-opacity-20 text-gold-accent px-4 py-2 rounded-full text-sm font-medium">M&A Advisory</span>
-                        <span class="bg-blue-accent bg-opacity-20 text-blue-accent px-4 py-2 rounded-full text-sm font-medium">Capital Markets</span>
-                        <span class="bg-gold-accent bg-opacity-20 text-gold-accent px-4 py-2 rounded-full text-sm font-medium">Financial Modeling</span>
-                        <span class="bg-blue-accent bg-opacity-20 text-blue-accent px-4 py-2 rounded-full text-sm font-medium">Deal Structuring</span>
+                        <h4 class="text-xl text-gray-600 mb-6 font-medium">Grant Thornton Bharat LLP – Mumbai</h4>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                    <span class="w-2 h-2 gold-accent rounded-full mr-3"></span>
+                                    Key Achievements
+                                </h5>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2 mt-1">✓</span>
+                                        Audited large clients: Cipla (₹24,000+ Cr revenue)
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2 mt-1">✓</span>
+                                        Led inventory verification at 4 depots/plants
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2 mt-1">✓</span>
+                                        Reduced discrepancies by 35%
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-green-500 mr-2 mt-1">✓</span>
+                                        Created 9+ audit workpapers with 100% QA compliance
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold text-gray-800 mb-3 flex items-center">
+                                    <span class="w-2 h-2 gold-accent rounded-full mr-3"></span>
+                                    Impact & Results
+                                </h5>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li class="flex items-start">
+                                        <span class="text-blue-500 mr-2 mt-1">📊</span>
+                                        Cost variance analysis across 5+ OpEx categories
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-500 mr-2 mt-1">📋</span>
+                                        Prepared reports for 12+ stakeholders
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-500 mr-2 mt-1">🚀</span>
+                                        20% boost in audit readiness through improvements
+                                    </li>
+                                    <li class="flex items-start">
+                                        <span class="text-blue-500 mr-2 mt-1">🎯</span>
+                                        IPO-preparing firm audit (₹500+ Cr revenue)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="card-shadow p-8 rounded-xl fade-in">
-                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
-                        <div>
-                            <h3 class="font-crimson font-semibold text-2xl mb-2 text-gold-accent">
-                                Audit Associate – PIE (Non-FS)
-                            </h3>
-                            <div class="text-xl text-blue-accent mb-2 premium-text">Grant Thornton Bharat LLP</div>
-                        </div>
-                        <div class="text-text-secondary font-medium">July 2024 - February 2025</div>
+            <!-- Projects Section -->
+            <div class="mt-16 fade-in">
+                <h3 class="text-2xl font-bold text-gray-800 mb-8 text-center">Key Projects & Activities</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="text-4xl mb-4 text-center">🏭</div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Financial Audits</h4>
+                        <p class="text-gray-600 text-sm">Statutory audits for listed pharmaceutical companies and IPO-preparing manufacturing firms with comprehensive compliance frameworks.</p>
                     </div>
-                    <p class="body-text mb-6">
-                        Executed comprehensive due diligence and financial analysis for Cipla Group (₹24,000+ crore revenue, NIFTY 50) 
-                        and pre-IPO manufacturing company (₹500+ crore revenue). Led inventory verification across multiple locations, 
-                        achieving 35% reduction in reporting discrepancies and 100% QA compliance. Developed expertise in valuation 
-                        methodologies and working capital optimization essential for investment banking transition.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gold-accent bg-opacity-20 text-gold-accent px-4 py-2 rounded-full text-sm font-medium">Due Diligence</span>
-                        <span class="bg-blue-accent bg-opacity-20 text-blue-accent px-4 py-2 rounded-full text-sm font-medium">Financial Analysis</span>
-                        <span class="bg-gold-accent bg-opacity-20 text-gold-accent px-4 py-2 rounded-full text-sm font-medium">Valuation</span>
-                        <span class="bg-blue-accent bg-opacity-20 text-blue-accent px-4 py-2 rounded-full text-sm font-medium">IPO Preparation</span>
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="text-4xl mb-4 text-center">⚙️</div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Process Improvements</h4>
+                        <p class="text-gray-600 text-sm">Identified gaps in compliance frameworks and implemented solutions that improved audit alignment and operational efficiency.</p>
                     </div>
-                </div>
-
-                <div class="card-shadow p-8 rounded-xl fade-in">
-                    <div class="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-6">
-                        <div>
-                            <h3 class="font-crimson font-semibold text-2xl mb-2 text-gold-accent">
-                                Leadership & Volunteering
-                            </h3>
-                            <div class="text-xl text-blue-accent mb-2 premium-text">Mulund College Of Commerce</div>
-                        </div>
-                        <div class="text-text-secondary font-medium">2021 - 2024</div>
-                    </div>
-                    <p class="body-text mb-6">
-                        Active member across multiple departments including Public Relations, Music (SPECTRUM), and Event Management. 
-                        Demonstrated leadership in managing PR efforts, contributing to cultural activities, and coordinating college events. 
-                        Achieved recognition in beatboxing competitions including Runner Up at SIESONS fest and Third Position at Drop the Beat event.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="bg-gold-accent bg-opacity-20 text-gold-accent px-4 py-2 rounded-full text-sm font-medium">Public Relations</span>
-                        <span class="bg-blue-accent bg-opacity-20 text-blue-accent px-4 py-2 rounded-full text-sm font-medium">Event Management</span>
-                        <span class="bg-gold-accent bg-opacity-20 text-gold-accent px-4 py-2 rounded-full text-sm font-medium">Cultural Activities</span>
-                        <span class="bg-blue-accent bg-opacity-20 text-blue-accent px-4 py-2 rounded-full text-sm font-medium">Leadership</span>
+                    <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                        <div class="text-4xl mb-4 text-center">🎯</div>
+                        <h4 class="text-lg font-semibold text-gray-800 mb-3">Leadership & Events</h4>
+                        <p class="text-gray-600 text-sm">Managed logistics, troubleshooting, registrations, and social media outreach for college events, demonstrating strong organizational skills.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-20 section-gradient">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-crimson font-bold text-5xl mb-4 text-text-primary fade-in">
-                    Professional Certifications
-                </h2>
-                <div class="section-divider w-24 mx-auto mb-8"></div>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Skills & Expertise</h2>
+                <div class="w-20 h-1 gold-accent mx-auto rounded"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card-shadow p-8 rounded-xl text-center fade-in accent-glow">
-                    <div class="text-5xl mb-4">🏆</div>
-                    <h3 class="font-crimson font-semibold text-xl mb-3 text-gold-accent">Advanced Diploma in Accounting</h3>
-                    <p class="text-blue-accent font-medium mb-2">ACCA (RQF Level 6)</p>
-                    <p class="text-text-muted text-sm mb-4">April 2024</p>
-                    <p class="body-text text-sm">Advanced qualification demonstrating mastery in financial reporting, audit, and business analysis.</p>
+            <div class="grid lg:grid-cols-3 gap-12">
+                <!-- Technical Skills -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Technical Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Financial Analysis</span>
+                                <span class="text-gray-500">95%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-blue-600 to-blue-800 h-3 rounded-full" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">IFRS & Ind AS</span>
+                                <span class="text-gray-500">90%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-yellow-500 to-yellow-600 h-3 rounded-full" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Audit Documentation</span>
+                                <span class="text-gray-500">92%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-green-500 to-green-600 h-3 rounded-full" style="width: 0%" data-width="92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Microsoft Office Suite</span>
+                                <span class="text-gray-500">88%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-purple-500 to-purple-600 h-3 rounded-full" style="width: 0%" data-width="88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="text-gray-700 font-medium">Cost Variance Analysis</span>
+                                <span class="text-gray-500">85%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="skill-bar bg-gradient-to-r from-red-500 to-red-600 h-3 rounded-full" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="card-shadow p-8 rounded-xl text-center fade-in">
-                    <div class="text-5xl mb-4">📊</div>
-                    <h3 class="font-crimson font-semibold text-xl mb-3 text-gold-accent">Goldman Sachs Risk Simulation</h3>
-                    <p class="text-blue-accent font-medium mb-2">Forage Platform</p>
-                    <p class="text-text-muted text-sm mb-4">April 2025</p>
-                    <p class="body-text text-sm">Specialized certification in risk assessment and management within investment banking context.</p>
+                <!-- Soft Skills -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Soft Skills</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-6 rounded-xl text-center card-hover">
+                            <div class="text-4xl mb-3">👥</div>
+                            <h4 class="font-semibold text-gray-800 text-sm">Leadership</h4>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl text-center card-hover">
+                            <div class="text-4xl mb-3">🧠</div>
+                            <h4 class="font-semibold text-gray-800 text-sm">Business Acumen</h4>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl text-center card-hover">
+                            <div class="text-4xl mb-3">🔍</div>
+                            <h4 class="font-semibold text-gray-800 text-sm">Analytical Thinking</h4>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl text-center card-hover">
+                            <div class="text-4xl mb-3">🎯</div>
+                            <h4 class="font-semibold text-gray-800 text-sm">Problem Solving</h4>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl text-center card-hover">
+                            <div class="text-4xl mb-3">💬</div>
+                            <h4 class="font-semibold text-gray-800 text-sm">Communication</h4>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-xl text-center card-hover">
+                            <div class="text-4xl mb-3">🤝</div>
+                            <h4 class="font-semibold text-gray-800 text-sm">Stakeholder Mgmt</h4>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="card-shadow p-8 rounded-xl text-center fade-in">
-                    <div class="text-5xl mb-4">📜</div>
-                    <h3 class="font-crimson font-semibold text-xl mb-3 text-gold-accent">Diploma in Accounting</h3>
-                    <p class="text-blue-accent font-medium mb-2">ACCA (RQF Level 4)</p>
-                    <p class="text-text-muted text-sm mb-4">August 2023</p>
-                    <p class="body-text text-sm">Foundation certification in accounting principles and business fundamentals.</p>
-                </div>
-
-                <div class="card-shadow p-8 rounded-xl text-center fade-in">
-                    <div class="text-5xl mb-4">⚖️</div>
-                    <h3 class="font-crimson font-semibold text-xl mb-3 text-gold-accent">Ethics & Professional Skills</h3>
-                    <p class="text-blue-accent font-medium mb-2">ACCA (EPSM)</p>
-                    <p class="text-text-muted text-sm mb-4">December 2023</p>
-                    <p class="body-text text-sm">Professional ethics and skills development for accounting professionals.</p>
-                </div>
-
-                <div class="card-shadow p-8 rounded-xl text-center fade-in">
-                    <div class="text-5xl mb-4">🎯</div>
-                    <h3 class="font-crimson font-semibold text-xl mb-3 text-gold-accent">Foundations in Professionalism</h3>
-                    <p class="text-blue-accent font-medium mb-2">ACCA (FIP)</p>
-                    <p class="text-text-muted text-sm mb-4">August 2023</p>
-                    <p class="body-text text-sm">Core professional development and ethical foundation module.</p>
-                </div>
-
-                <div class="card-shadow p-8 rounded-xl text-center fade-in">
-                    <div class="text-5xl mb-4">📈</div>
-                    <h3 class="font-crimson font-semibold text-xl mb-3 text-gold-accent">ACCA Professional Level</h3>
-                    <p class="text-blue-accent font-medium mb-2">11/13 Papers Cleared</p>
-                    <p class="text-text-muted text-sm mb-4">2021 - Present</p>
-                    <p class="body-text text-sm">Advanced progress through chartered accountancy qualification with focus on corporate finance.</p>
+                <!-- Languages -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8 text-center">Languages</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🇬🇧</span>
+                                <span class="font-medium text-gray-800">English</span>
+                            </div>
+                            <span class="text-green-600 font-semibold">Fluent</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🇮🇳</span>
+                                <span class="font-medium text-gray-800">Hindi</span>
+                            </div>
+                            <span class="text-green-600 font-semibold">Native</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🇮🇳</span>
+                                <span class="font-medium text-gray-800">Gujarati</span>
+                            </div>
+                            <span class="text-green-600 font-semibold">Native</span>
+                        </div>
+                        <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+                            <div class="flex items-center">
+                                <span class="text-2xl mr-3">🇮🇳</span>
+                                <span class="font-medium text-gray-800">Marathi</span>
+                            </div>
+                            <span class="text-blue-600 font-semibold">Proficient</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Expertise Section -->
-    <section id="expertise" class="py-20 bg-dark-primary">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-crimson font-bold text-5xl mb-4 text-text-primary fade-in">
-                    Core Expertise
-                </h2>
-                <div class="section-divider w-24 mx-auto mb-8"></div>
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Education & Certifications</h2>
+                <div class="w-20 h-1 gold-accent mx-auto rounded"></div>
             </div>
             
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div class="slide-in-left">
-                    <h3 class="font-crimson font-semibold text-3xl mb-8 text-gold-accent">
-                        Technical Proficiencies
-                    </h3>
-                    <div class="space-y-8">
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-semibold text-text-primary">Risk Assessment</span>
-                                <span class="text-gold-accent">95%</span>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Education -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Education</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 finance-gradient rounded-full flex items-center justify-center text-white text-2xl mr-4">
+                                    🎓
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">ACCA (Professional Level)</h4>
+                                    <p class="text-gray-600">11/13 Papers Cleared</p>
+                                    <p class="text-sm text-blue-600 font-medium">Ongoing</p>
+                                </div>
                             </div>
-                            <div class="bg-dark-accent rounded-full h-3">
-                                <div class="progress-bar h-3 rounded-full" data-width="95%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-semibold text-text-primary">Financial Variance Analysis</span>
-                                <span class="text-gold-accent">92%</span>
-                            </div>
-                            <div class="bg-dark-accent rounded-full h-3">
-                                <div class="progress-bar h-3 rounded-full" data-width="92%"></div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-semibold text-text-primary">Statutory Audits</span>
-                                <span class="text-gold-accent">90%</span>
-                            </div>
-                            <div class="bg-dark-accent rounded-full h-3">
-                                <div class="progress-bar h-3 rounded-full" data-width="90%"></div>
+                            <div class="bg-gray-50 rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium text-gray-700">Progress</span>
+                                    <span class="text-sm font-medium text-gray-700">85%</span>
+                                </div>
+                                <div class="bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-semibold text-text-primary">Microsoft Excel & PowerPoint</span>
-                                <span class="text-gold-accent">88%</span>
-                            </div>
-                            <div class="bg-dark-accent rounded-full h-3">
-                                <div class="progress-bar h-3 rounded-full" data-width="88%"></div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center text-white text-2xl mr-4">
+                                    📚
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">B.Com</h4>
+                                    <p class="text-gray-600">Mulund College of Commerce</p>
+                                    <p class="text-sm text-green-600 font-medium">8.0 CGPA (2021–24)</p>
+                                </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="flex justify-between mb-3">
-                                <span class="font-semibold text-text-primary">Financial Modeling & Valuation</span>
-                                <span class="text-gold-accent">85%</span>
-                            </div>
-                            <div class="bg-dark-accent rounded-full h-3">
-                                <div class="progress-bar h-3 rounded-full" data-width="85%"></div>
+
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center text-white text-2xl mr-4">
+                                    🏫
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">HSC</h4>
+                                    <p class="text-gray-600">St. Xavier's English High School</p>
+                                    <p class="text-sm text-purple-600 font-medium">90%</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="slide-in-right">
-                    <h3 class="font-crimson font-semibold text-3xl mb-8 text-gold-accent">
-                        Industry Specialization
-                    </h3>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="card-shadow p-6 rounded-xl text-center">
-                            <div class="text-4xl mb-4">💊</div>
-                            <h4 class="font-semibold text-gold-accent mb-2">Pharmaceuticals</h4>
-                            <p class="text-sm text-text-secondary">NIFTY 50, Large Cap</p>
+
+                <!-- Certifications -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-8">Certifications</h3>
+                    <div class="space-y-6">
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 gold-accent rounded-full flex items-center justify-center text-white text-2xl mr-4">
+                                    🏆
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">ACCA Advanced Diploma</h4>
+                                    <p class="text-gray-600">Accounting and Business</p>
+                                    <p class="text-sm text-yellow-600 font-medium">Professional Qualification</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm">Comprehensive understanding of financial reporting, management accounting, and business strategy.</p>
                         </div>
-                        <div class="card-shadow p-6 rounded-xl text-center">
-                            <div class="text-4xl mb-4">🏭</div>
-                            <h4 class="font-semibold text-gold-accent mb-2">Manufacturing</h4>
-                            <p class="text-sm text-text-secondary">Pre-IPO, Mid-Cap</p>
+
+                        <div class="bg-white rounded-xl p-6 shadow-lg card-hover">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl mr-4">
+                                    🏛️
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-800">Goldman Sachs</h4>
+                                    <p class="text-gray-600">Risk Management Virtual Internship</p>
+                                    <p class="text-sm text-blue-600 font-medium">Forage Platform</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm">Gained insights into investment banking risk management practices and financial modeling techniques.</p>
                         </div>
-                        <div class="card-shadow p-6 rounded-xl text-center">
-                            <div class="text-4xl mb-4">📊</div>
-                            <h4 class="font-semibold text-gold-accent mb-2">Investment Banking</h4>
-                            <p class="text-sm text-text-secondary">M&A, Capital Markets</p>
-                        </div>
-                        <div class="card-shadow p-6 rounded-xl text-center">
-                            <div class="text-4xl mb-4">🔍</div>
-                            <h4 class="font-semibold text-gold-accent mb-2">Risk Management</h4>
-                            <p class="text-sm text-text-secondary">Goldman Sachs Certified</p>
-                        </div>
-                        <div class="card-shadow p-6 rounded-xl text-center">
-                            <div class="text-4xl mb-4">🎵</div>
-                            <h4 class="font-semibold text-gold-accent mb-2">Leadership</h4>
-                            <p class="text-sm text-text-secondary">Cultural & Event Management</p>
-                        </div>
-                        <div class="card-shadow p-6 rounded-xl text-center">
-                            <div class="text-4xl mb-4">⚽</div>
-                            <h4 class="font-semibold text-gold-accent mb-2">Team Sports</h4>
-                            <p class="text-sm text-text-secondary">Football, Running</p>
+
+                        <!-- Interests -->
+                        <div class="bg-white rounded-xl p-6 shadow-lg">
+                            <h4 class="text-lg font-semibold text-gray-800 mb-4">Interests & Hobbies</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <div class="flex items-center bg-gray-50 px-4 py-2 rounded-full">
+                                    <span class="text-xl mr-2">📖</span>
+                                    <span class="text-sm font-medium text-gray-700">Business Reading</span>
+                                </div>
+                                <div class="flex items-center bg-gray-50 px-4 py-2 rounded-full">
+                                    <span class="text-xl mr-2">⚽</span>
+                                    <span class="text-sm font-medium text-gray-700">Football</span>
+                                </div>
+                                <div class="flex items-center bg-gray-50 px-4 py-2 rounded-full">
+                                    <span class="text-xl mr-2">🎵</span>
+                                    <span class="text-sm font-medium text-gray-700">Beatboxing</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -538,78 +547,75 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 section-gradient">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="font-crimson font-bold text-5xl mb-4 text-text-primary fade-in">
-                    Let's Connect
-                </h2>
-                <div class="section-divider w-24 mx-auto mb-8"></div>
-                <p class="body-text">Ready to discuss investment banking opportunities and strategic partnerships</p>
+    <section id="contact" class="py-20 finance-gradient text-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">Let's Connect</h2>
+                <div class="w-20 h-1 bg-white mx-auto rounded"></div>
+                <p class="text-xl mt-4 opacity-90">Ready to discuss opportunities in finance and investment banking</p>
             </div>
-            
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div class="slide-in-left">
-                    <h3 class="font-crimson font-semibold text-3xl mb-8 text-gold-accent">Get In Touch</h3>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
                     <div class="space-y-6">
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-gold-accent rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-xl text-dark-primary">📧</span>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center text-2xl">
+                                📧
                             </div>
                             <div>
-                                <div class="font-semibold text-text-primary">Email</div>
-                                <div class="text-text-secondary">avandodhia.acca@gmail.com</div>
+                                <p class="font-medium text-lg">Email</p>
+                                <p class="opacity-80">avandodhia.acca@gmail.com</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-accent rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-xl text-white">📱</span>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center text-2xl">
+                                📱
                             </div>
                             <div>
-                                <div class="font-semibold text-text-primary">Phone</div>
-                                <div class="text-text-secondary">+91 9004628904</div>
+                                <p class="font-medium text-lg">Phone</p>
+                                <p class="opacity-80">+91 9004628904</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-gold-accent rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-xl text-dark-primary">📍</span>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center text-2xl">
+                                💼
                             </div>
                             <div>
-                                <div class="font-semibold text-text-primary">Location</div>
-                                <div class="text-text-secondary">Mumbai, India</div>
+                                <p class="font-medium text-lg">LinkedIn</p>
+                                <p class="opacity-80">linkedin.com/in/avan-dodhia</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <div class="w-12 h-12 bg-blue-accent rounded-lg flex items-center justify-center mr-4">
-                                <span class="text-xl text-white">💼</span>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center text-2xl">
+                                📍
                             </div>
                             <div>
-                                <div class="font-semibold text-text-primary">LinkedIn</div>
-                                <div class="text-text-secondary">linkedin.com/in/avan-dodhia</div>
+                                <p class="font-medium text-lg">Location</p>
+                                <p class="opacity-80">Mumbai, India</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="slide-in-right">
-                    <form class="space-y-6" id="contact-form">
+                <div class="fade-in">
+                    <form id="contact-form" class="space-y-6">
                         <div>
-                            <input type="text" placeholder="Your Name" 
-                                   class="w-full px-4 py-3 bg-dark-accent border border-text-muted rounded-lg focus:border-gold-accent focus:outline-none transition-colors text-text-primary placeholder-text-muted" required>
+                            <input type="text" placeholder="Your Name" required 
+                                   class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white/50 focus:bg-white/20">
                         </div>
                         <div>
-                            <input type="email" placeholder="Your Email" 
-                                   class="w-full px-4 py-3 bg-dark-accent border border-text-muted rounded-lg focus:border-gold-accent focus:outline-none transition-colors text-text-primary placeholder-text-muted" required>
+                            <input type="email" placeholder="Your Email" required 
+                                   class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white/50 focus:bg-white/20">
                         </div>
                         <div>
-                            <input type="text" placeholder="Company" 
-                                   class="w-full px-4 py-3 bg-dark-accent border border-text-muted rounded-lg focus:border-gold-accent focus:outline-none transition-colors text-text-primary placeholder-text-muted">
+                            <input type="text" placeholder="Subject" required 
+                                   class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white/50 focus:bg-white/20">
                         </div>
                         <div>
-                            <textarea rows="4" placeholder="Your Message" 
-                                      class="w-full px-4 py-3 bg-dark-accent border border-text-muted rounded-lg focus:border-gold-accent focus:outline-none transition-colors resize-none text-text-primary placeholder-text-muted" required></textarea>
+                            <textarea placeholder="Your Message" rows="4" required 
+                                      class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:outline-none focus:border-white/50 focus:bg-white/20 resize-none"></textarea>
                         </div>
-                        <button type="submit" class="w-full btn-primary py-3 rounded-lg font-semibold text-lg">
+                        <button type="submit" 
+                                class="w-full bg-white text-blue-900 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
                             Send Message
                         </button>
                     </form>
@@ -619,89 +625,33 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark-primary py-12 border-t border-dark-accent">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="font-crimson font-bold text-xl text-gold-accent mb-4">Avan Dodhia</h3>
-                    <p class="text-text-secondary text-sm leading-relaxed">
-                        Investment Banking Fellow specializing in M&A advisory, financial modeling, and capital markets. 
-                        ACCA Professional with Goldman Sachs certification.
-                    </p>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center">
+                <div class="text-2xl font-bold mb-4">
+                    <span class="text-blue-400">Avan</span> <span class="gold-accent bg-clip-text text-transparent">Dodhia</span>
                 </div>
-                <div>
-                    <h4 class="font-semibold text-text-primary mb-4">Quick Links</h4>
-                    <div class="space-y-2">
-                        <a href="#about" class="block text-text-secondary hover:text-gold-accent transition-colors text-sm">About</a>
-                        <a href="#experience" class="block text-text-secondary hover:text-gold-accent transition-colors text-sm">Experience</a>
-                        <a href="#certifications" class="block text-text-secondary hover:text-gold-accent transition-colors text-sm">Certifications</a>
-                        <a href="#expertise" class="block text-text-secondary hover:text-gold-accent transition-colors text-sm">Expertise</a>
-                    </div>
+                <p class="text-gray-400 mb-6">Audit Associate | ACCA Candidate | Aspiring Investment Banking Analyst</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="mailto:avandodhia.acca@gmail.com" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                        📧
+                    </a>
+                    <a href="https://linkedin.com/in/avan-dodhia" target="_blank" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                        💼
+                    </a>
+                    <a href="tel:+919004628904" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors">
+                        📱
+                    </a>
                 </div>
-                <div>
-                    <h4 class="font-semibold text-text-primary mb-4">Connect</h4>
-                    <div class="space-y-2">
-                        <p class="text-text-secondary text-sm">avandodhia.acca@gmail.com</p>
-                        <p class="text-text-secondary text-sm">+91 9004628904</p>
-                        <p class="text-text-secondary text-sm">Mumbai, India</p>
-                    </div>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400">© 2024 Avan Dodhia. All rights reserved.</p>
                 </div>
-            </div>
-            <div class="border-t border-dark-accent pt-8 text-center">
-                <p class="text-text-muted text-sm">&copy; 2024 Avan Dodhia. All rights reserved. • Investment Banking Professional • ACCA Qualified</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Progress bars animation
-        const progressObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const progressBars = entry.target.querySelectorAll('.progress-bar');
-                    progressBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
-                        setTimeout(() => {
-                            bar.style.width = width;
-                        }, 500);
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelector('#expertise').addEventListener('scroll', () => {
-            progressObserver.observe(document.querySelector('#expertise'));
-        });
-
-        // Trigger progress bars when section is visible
-        observer.observe(document.querySelector('#expertise'));
-        
-        // Mobile menu toggle
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            // Add mobile menu functionality here
-            console.log('Mobile menu clicked');
-        });
-
-        // Smooth scrolling
+        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -715,30 +665,113 @@
             });
         });
 
-        // Contact form handling
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-        // Trigger progress bars when expertise section comes into view
-        const expertiseSection = document.querySelector('#expertise');
-        const progressBarsTriggered = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const progressBars = document.querySelectorAll('.progress-bar');
-                    progressBars.forEach(bar => {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Skill bar animation
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const skillBars = entry.target.querySelectorAll('.skill-bar');
+                    skillBars.forEach(bar => {
                         const width = bar.getAttribute('data-width');
                         setTimeout(() => {
                             bar.style.width = width;
-                        }, 800);
+                        }, 500);
                     });
                 }
             });
-        }, { threshold: 0.3 });
+        }, { threshold: 0.5 });
 
-        progressBarsTriggered.observe(expertiseSection);
+        const skillsSection = document.querySelector('#skills');
+        if (skillsSection) {
+            skillObserver.observe(skillsSection);
+        }
+
+        // Typing animation
+        const typingElement = document.querySelector('.typing-animation');
+        if (typingElement) {
+            const text = 'Avan Dodhia';
+            let index = 0;
+            
+            function typeText() {
+                if (index < text.length) {
+                    typingElement.textContent = text.slice(0, index + 1);
+                    index++;
+                    setTimeout(typeText, 150);
+                }
+            }
+            
+            setTimeout(typeText, 1000);
+        }
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn?.addEventListener('click', () => {
+            alert('Mobile menu would open here. This portfolio is optimized for desktop viewing for professional purposes.');
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = this.querySelector('input[type="text"]').value;
+            const email = this.querySelector('input[type="email"]').value;
+            const subject = this.querySelectorAll('input[type="text"]')[1].value;
+            const message = this.querySelector('textarea').value;
+            
+            if (name && email && subject && message) {
+                const button = this.querySelector('button[type="submit"]');
+                const originalText = button.textContent;
+                
+                button.textContent = 'Sending...';
+                button.disabled = true;
+                
+                setTimeout(() => {
+                    alert(`Thank you ${name}! Your message regarding "${subject}" has been received. I'll respond within 24 hours to discuss potential opportunities.`);
+                    this.reset();
+                    button.textContent = originalText;
+                    button.disabled = false;
+                }, 1500);
+            }
+        });
+
+        // Add some initial animations
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade-in').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    el.classList.add('visible');
+                }
+            });
+        });
+
+        // Professional interactions
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96c5ccba978c3501',t:'MTc1NDcyNzI2NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9761e5abb5e985d1',t:'MTc1NjM2NDA2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
